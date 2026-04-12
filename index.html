@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aslak Almadinah - Premium Company Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --theme-main: #1e3a8a; /* Corporate Navy Blue */
+            --theme-dark: #0f172a; /* Slate 900 for text */
+        }
+        body {
+            background-color: #e2e8f0;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--theme-dark);
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* A4 Page Styling */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin: 15mm auto;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        /* Inner Content Wrapper */
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            padding: 20mm;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Page Footer */
+        .page-footer {
+            position: absolute;
+            bottom: 12mm;
+            left: 20mm;
+            right: 20mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 9pt;
+            font-weight: 600;
+            color: #94a3b8;
+            border-top: 1px solid #cbd5e1;
+            padding-top: 8px;
+            z-index: 10;
+        }
+        .page-footer .theme-line {
+            height: 3px;
+            width: 40px;
+            background-color: var(--theme-main);
+            position: absolute;
+            top: -2px;
+            left: 0;
+        }
+
+        /* Watermark */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 110px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            color: rgba(15, 23, 42, 0.03);
+            white-space: nowrap;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @media print {
+            body { background-color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page { margin: 0; box-shadow: none; border: none; }
+            .no-print { display: none !important; }
+            @page { size: A4; margin: 0; }
+        }
+        
+        .text-theme { color: var(--theme-main); }
+        .bg-theme { background-color: var(--theme-main); }
+        .border-theme { border-color: var(--theme-main); }
+    </style>
+</head>
+<body>
+
+    <div class="fixed top-5 right-5 no-print z-50">
+        <button onclick="window.print()" class="bg-[#1e3a8a] hover:bg-blue-900 text-white font-bold py-3 px-6 rounded shadow-xl flex items-center gap-2 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Print Profile
+        </button>
+    </div>
+
+    <!-- ================= PAGE 1: COVER PAGE ================= -->
+    <div class="page flex flex-col items-center justify-center relative bg-slate-900">
+        <img src="https://images.unsplash.com/photo-1541888086925-eb3225f6c867?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" alt="Cover Background">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-blue-900/80 to-slate-900 z-0"></div>
+        
+        <div class="absolute top-0 left-0 w-full h-3 bg-theme z-20"></div>
+
+        <div class="relative z-20 text-center flex flex-col items-center px-10">
+            <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center p-4 shadow-2xl mb-12 border-4 border-theme overflow-hidden">
+                <img src="logo.png" alt="Aslak Almadinah Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.alt='logo.png এখানে রাখুন';">
+            </div>
+
+            <div class="max-w-3xl">
+                <h1 class="text-6xl font-black text-white tracking-widest uppercase mb-4 shadow-sm">Corporate Profile</h1>
+                <div class="w-32 h-1.5 bg-theme mx-auto mb-10"></div>
+                
+                <h2 class="text-3xl font-bold text-gray-100 mb-3 tracking-wide">Aslak Almadinah Establishment</h2>
+                <h3 class="text-2xl text-blue-200 mb-8 font-light tracking-widest uppercase">For Building Materials</h3>
+                
+                <div class="inline-block bg-white/10 backdrop-blur-md border border-white/20 px-8 py-3 rounded-lg mb-12 shadow-lg">
+                    <p class="text-3xl font-bold text-white arabic tracking-wider" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">مؤسسة اسلاك المدينة لمواد البناء</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-12 w-full flex justify-between px-20 z-20 text-blue-200 text-sm font-bold tracking-widest uppercase">
+            <span>Dammam, Kingdom of Saudi Arabia</span>
+            <span class="text-white">www.aslakalmadina.com</span>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 2: TABLE OF CONTENTS ================= -->
+    <div class="page">
+        <div class="watermark">INDEX</div>
+        
+        <div class="content-wrapper flex flex-row gap-12">
+            <div class="w-1/3 flex flex-col">
+                <h2 class="text-4xl font-black text-slate-900 mb-8 uppercase">Index</h2>
+                <div class="w-12 h-1.5 bg-theme mb-8"></div>
+                
+                <ul class="space-y-6 text-sm font-bold text-slate-500 uppercase tracking-wide">
+                    <li class="flex justify-between border-b border-slate-200 pb-2 hover:text-theme transition-colors"><span>01. Chairman's Message</span> <span class="text-theme">03</span></li>
+                    <li class="flex justify-between border-b border-slate-200 pb-2 hover:text-theme transition-colors"><span>02. About Us & Vision</span> <span class="text-theme">04</span></li>
+                    <li class="flex justify-between border-b border-slate-200 pb-2 hover:text-theme transition-colors"><span>03. Core Business</span> <span class="text-theme">05</span></li>
+                    <li class="flex justify-between border-b border-slate-200 pb-2 hover:text-theme transition-colors"><span>04. Quality & Future</span> <span class="text-theme">06</span></li>
+                    <li class="flex justify-between border-b border-slate-200 pb-2 hover:text-theme transition-colors"><span>05. Corporate Info</span> <span class="text-theme">07</span></li>
+                    <li class="flex justify-between border-b border-slate-200 pb-2 hover:text-theme transition-colors"><span>06. Official Certificates</span> <span class="text-theme">08-10</span></li>
+                </ul>
+            </div>
+
+            <div class="w-2/3 mt-2">
+                <div class="w-full h-48 mb-8 overflow-hidden shadow-lg border-b-4 border-theme">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Corporate Architecture" class="w-full h-full object-cover">
+                </div>
+
+                <div class="bg-slate-50 p-8 border border-slate-200 shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4 uppercase tracking-wide flex items-center gap-2">
+                        <span class="w-4 h-4 bg-theme inline-block"></span> Executive Summary
+                    </h3>
+                    <p class="text-slate-600 leading-loose text-justify mb-6">
+                        <strong>Aslak Almadinah Establishment For Building Materials</strong> is a premier retail and supply company based in Dammam, Eastern Province, Kingdom of Saudi Arabia. Specializing in a comprehensive range of building materials including electricals, plumbing, and safety equipment, we serve clients ranging from individual homeowners to large-scale contractors. 
+                    </p>
+                    <p class="text-slate-600 leading-loose text-justify mb-6">
+                        Operating under Commercial Registration No. <strong>2050121476</strong>, our business is fully licensed and recognized by all major Saudi authorities, ensuring trust, quality, and strict compliance with Vision 2030 standards.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="bg-white p-3 border-l-4 border-theme shadow-sm">
+                            <p class="text-xs text-slate-400 uppercase font-bold">NUN Number</p>
+                            <p class="text-lg font-bold text-slate-800">7005712349</p>
+                        </div>
+                        <div class="bg-white p-3 border-l-4 border-theme shadow-sm">
+                            <p class="text-xs text-slate-400 uppercase font-bold">VAT Number</p>
+                            <p class="text-lg font-bold text-slate-800">312715966500003</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="theme-line"></div>
+            <span>ASLAK ALMADINAH EST.</span>
+            <span>02</span>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 3: CHAIRMAN'S MESSAGE ================= -->
+    <div class="page">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-bl-full z-0"></div>
+        <div class="watermark">LEADERSHIP</div>
+        
+        <div class="content-wrapper">
+            <div class="w-12 h-1.5 bg-theme mb-6"></div>
+            <h2 class="text-4xl font-black text-slate-900 mb-12 uppercase">Chairman's Message</h2>
+
+            <div class="flex gap-10 items-center">
+                <div class="w-4/12 flex justify-center">
+                    <div class="w-64 h-64 bg-slate-100 rounded-full shadow-2xl relative z-10 border-8 border-white overflow-hidden flex items-center justify-center p-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Chairman Avatar" class="w-full h-full object-contain drop-shadow-md opacity-90">
+                    </div>
+                </div>
+
+                <div class="w-8/12 relative mt-4">
+                    <span class="absolute -top-12 -left-8 text-9xl text-blue-100 font-serif leading-none opacity-50 z-0">"</span>
+                    
+                    <p class="text-slate-700 leading-loose text-justify mb-6 relative z-10 text-lg">
+                        Welcome to <strong>Aslak Almadinah Establishment For Building Materials</strong>. Since our foundation in 2019 (1440 AH), our goal has been clear: to provide the Kingdom of Saudi Arabia with the highest quality building materials, electrical tools, and plumbing solutions.
+                    </p>
+                    <p class="text-slate-700 leading-loose text-justify mb-8 relative z-10 text-lg">
+                        As a 100% Saudi-owned enterprise, we take immense pride in contributing to national growth. We have built our reputation on the pillars of trust, uncompromising quality, and legal transparency. Every product we deliver and every client we serve is a testament to our dedication to excellence.
+                    </p>
+
+                    <div class="border-l-4 border-theme pl-6 mt-8 bg-slate-50 p-4 relative z-10">
+                        <p class="text-2xl font-bold text-slate-900 uppercase tracking-wide">Mohammed Abdulaziz Al Hussein</p>
+                        <p class="text-theme font-semibold mt-1 uppercase tracking-widest text-sm">Owner & Founder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="theme-line"></div>
+            <span>ASLAK ALMADINAH EST.</span>
+            <span>03</span>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 4: ABOUT, VISION & MISSION ================= -->
+    <div class="page">
+        <div class="watermark">WHO WE ARE</div>
+
+        <div class="content-wrapper">
+            <div class="w-12 h-1.5 bg-theme mb-6"></div>
+            <h2 class="text-4xl font-black text-slate-900 mb-8 uppercase">About The Company</h2>
+
+            <div class="flex gap-8 mb-10">
+                <div class="w-1/2">
+                    <p class="text-slate-700 leading-loose text-justify text-lg mb-6">
+                        Established on January 19, 2019, Aslak Almadinah has rapidly emerged as a trusted provider of essential building and electrical materials. We bridge the gap between top-tier manufacturers and the local construction market.
+                    </p>
+                    <p class="text-slate-700 leading-loose text-justify text-lg">
+                        Our expansive retail outlet in Dammam provides easy access to a comprehensive inventory of wires, cables, plumbing fixtures, safety gear, and industrial fasteners.
+                    </p>
+                </div>
+                <div class="w-1/2">
+                    <img src="https://images.unsplash.com/photo-1542013936693-884638332954?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Business Growth" class="w-full h-full object-cover shadow-lg border-b-4 border-theme">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-8 mt-2">
+                <div class="bg-slate-900 text-white p-8 relative overflow-hidden shadow-xl">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-theme rounded-bl-full opacity-80"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4 uppercase tracking-wide text-blue-400">Our Vision</h3>
+                        <p class="leading-relaxed text-slate-300">
+                            To be the most trusted and preferred supplier of diverse building materials in the Eastern Province and across KSA, recognized for our quality, reliability, and contribution to smart infrastructure.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-theme text-white p-8 shadow-xl relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-slate-900 rounded-tr-full opacity-50"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4 uppercase tracking-wide text-white">Our Mission</h3>
+                        <p class="leading-relaxed text-blue-100">
+                            To empower builders, contractors, and homeowners by providing immediate access to safe, durable, and standard-compliant materials, backed by exceptional customer service and transparent business practices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="theme-line"></div>
+            <span>ASLAK ALMADINAH EST.</span>
+            <span>04</span>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 5: CORE BUSINESS ================= -->
+    <div class="page bg-slate-50">
+        <div class="watermark">PRODUCTS</div>
+
+        <div class="content-wrapper">
+            <div class="w-12 h-1.5 bg-theme mb-4"></div>
+            <h2 class="text-4xl font-black text-slate-900 mb-2 uppercase">Core Products & Services</h2>
+            
+            <p class="text-lg text-slate-600 mb-6 font-light">
+                Comprehensive solutions for construction and maintenance.<br>
+                <span class="text-theme font-bold arabic text-md">(مواد البناء والأدوات الكهربائية والصحية)</span>
+            </p>
+
+            <div class="grid grid-cols-3 gap-5">
+                <div class="bg-white shadow-md overflow-hidden group border border-slate-100">
+                    <div class="h-28 overflow-hidden bg-slate-200">
+                        <img src="https://images.unsplash.com/photo-1558402529-d2638a7023e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Electrical" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 border-t-4 border-transparent group-hover:border-theme transition-colors">
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Electric & Lighting</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Cables, wires, modern switches, LED lighting, and smart control units for optimal conductivity.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white shadow-md overflow-hidden group border border-slate-100">
+                    <div class="h-28 overflow-hidden bg-slate-200">
+                        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Plumbing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 border-t-4 border-transparent group-hover:border-theme transition-colors">
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Plumbing & Sanitary</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">High-quality pipes, fittings, valves, and premium sanitary wares for robust water management.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-md overflow-hidden group border border-slate-100">
+                    <div class="h-28 overflow-hidden bg-slate-200">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Chemicals" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 border-t-4 border-transparent group-hover:border-theme transition-colors">
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Building Chemicals</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Construction chemicals, heavy-duty adhesives, sealants, and advanced waterproofing solutions.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-md overflow-hidden group border border-slate-100">
+                    <div class="h-28 overflow-hidden bg-slate-200">
+                        <img src="https://images.unsplash.com/photo-1530983821639-6e3e570f7d54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Fasteners" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 border-t-4 border-transparent group-hover:border-theme transition-colors">
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Fasteners</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Industrial-grade screws, bolts, nuts, nails, and reliable anchoring systems for structural integrity.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-md overflow-hidden group border border-slate-100">
+                    <div class="h-28 overflow-hidden bg-slate-200">
+                        <img src="https://images.unsplash.com/photo-1558025252-1b15e4f48866?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Door Locks" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 border-t-4 border-transparent group-hover:border-theme transition-colors">
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Door Locks & Hardware</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Premium security door locks, handles, hinges, and diverse architectural hardware accessories.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-md overflow-hidden group border border-slate-100">
+                    <div class="h-28 overflow-hidden bg-slate-200">
+                        <img src="https://images.unsplash.com/photo-1550186987-1725b822d56a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Safety Equipment" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 border-t-4 border-transparent group-hover:border-theme transition-colors">
+                        <h4 class="text-lg font-bold text-slate-900 mb-1">Safety Equipment</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Essential protective gears, hard hats, safety gloves, goggles, and comprehensive site safety tools.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="theme-line"></div>
+            <span>ASLAK ALMADINAH EST.</span>
+            <span>05</span>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 6: QUALITY & VISION ================= -->
+    <div class="page">
+        <div class="watermark">QUALITY</div>
+
+        <div class="content-wrapper">
+            <div class="w-12 h-1.5 bg-theme mb-6"></div>
+            <h2 class="text-4xl font-black text-slate-900 mb-10 uppercase">Quality & Future</h2>
+
+            <div class="mb-10">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3">
+                    <span class="w-2 h-8 bg-theme inline-block"></span> Quality Assurance & Safety
+                </h3>
+                <p class="text-slate-700 leading-loose text-justify mb-6 text-lg">
+                    Safety is non-negotiable in the building materials industry. At Aslak Almadinah, we ensure that every item on our shelves complies with the strict safety standards mandated by the Kingdom.
+                </p>
+                <div class="bg-slate-900 p-6 rounded shadow-lg flex items-center gap-6 text-white border-l-4 border-theme">
+                    <div class="w-16 h-16 rounded-full bg-theme flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-1 text-blue-400">Civil Defense Approval</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Our facilities are fully certified by the KSA General Directorate of Civil Defense (License No. 1-00146-735510). We maintain a secure retail environment in the Al-Zuhour district that prioritizes safety.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+                    <span class="w-2 h-8 bg-emerald-600 inline-block"></span> Alignment with Saudi Vision 2030
+                </h3>
+                <div class="flex gap-8 items-center bg-slate-50 p-6 border border-slate-200 shadow-sm">
+                    <div class="w-1/3 h-48 overflow-hidden rounded shadow-md border-2 border-white">
+                        <img src="https://images.unsplash.com/photo-1579361819793-1815e100f2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vision 2030 Architecture" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-2/3">
+                        <p class="text-slate-700 leading-loose text-justify text-lg">
+                            Aslak Almadinah is an active participant in the economic transformation of Saudi Arabia. We proudly hold a <strong class="text-emerald-700">Green (Small A) Nitaqat Level</strong> certification from Qiwa, demonstrating our commitment to Saudization. As a registered <strong class="text-blue-700">Monsha'at SME</strong>, we contribute to the diversification of the national economy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="theme-line"></div>
+            <span>ASLAK ALMADINAH EST.</span>
+            <span>06</span>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 7: CORPORATE INFO ================= -->
+    <div class="page">
+        <div class="watermark">CONTACT</div>
+
+        <div class="content-wrapper">
+            <div class="w-12 h-1.5 bg-theme mb-6"></div>
+            <h2 class="text-4xl font-black text-slate-900 mb-12 uppercase">Corporate Info & Contact</h2>
+            
+            <div class="bg-slate-900 text-white shadow-2xl p-8 mb-10 relative overflow-hidden rounded">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-theme rounded-bl-full opacity-30"></div>
+                <div class="grid grid-cols-2 gap-10 relative z-10">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-400 uppercase tracking-wider mb-6 border-b border-slate-700 pb-2">Entity Details</h3>
+                        <ul class="space-y-5">
+                            <li class="flex flex-col">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Commercial Registration</span>
+                                <span class="text-xl font-bold text-white">2050121476</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Unified National No.</span>
+                                <span class="text-xl font-bold text-white">7005712349</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">VAT Number</span>
+                                <span class="text-xl font-bold text-white">312715966500003</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Chamber of Commerce</span>
+                                <span class="text-xl font-bold text-white">253262 (Asharqia)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-400 uppercase tracking-wider mb-6 border-b border-slate-700 pb-2">Contact Us</h3>
+                        <ul class="space-y-5">
+                            <li class="flex flex-col">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Retail Branch</span>
+                                <span class="text-sm font-semibold text-slate-100">Anas Bin Malik Street, Al-Zuhour District, Dammam.</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Registered Office</span>
+                                <span class="text-sm font-semibold text-slate-100">7962, Al-Ajam District 3620, Dammam.</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Phone</span>
+                                <span class="text-xl font-bold text-white">0136549987</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Website</span>
+                                <span class="text-lg font-bold text-blue-400">www.aslakalmadina.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full flex-grow bg-slate-200 border-4 border-slate-100 shadow-lg relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Location Map" class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition-all">
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-2xl border-2 border-theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-theme" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="theme-line"></div>
+            <span>ASLAK ALMADINAH EST.</span>
+            <span>07</span>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 8: CERTIFICATES INTRO ================= -->
+    <div class="page flex flex-col justify-center items-center text-center relative bg-slate-900">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Corporate Agreement">
+        <div class="absolute inset-0 bg-theme/70 mix-blend-multiply"></div>
+        
+        <div class="relative z-10 p-10 max-w-3xl text-white bg-black/40 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl">
+            <h2 class="text-6xl font-black mb-6 uppercase tracking-widest text-white">Official<br>Certificates</h2>
+            <div class="w-32 h-1 bg-white mx-auto mb-8"></div>
+            
+            <p class="text-xl font-light leading-relaxed mb-8 text-blue-50">
+                Trust is built on transparency. As a fully compliant and legally registered entity in the Kingdom of Saudi Arabia, Aslak Almadinah operates under the strict guidelines and approvals of multiple governmental bodies.
+            </p>
+            <div class="inline-block bg-white text-theme px-6 py-2 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg">
+                Verified Documents Gallery
+            </div>
+        </div>
+        
+        <div class="absolute bottom-12 w-full flex justify-between px-20 z-20 text-white/50 text-sm font-bold tracking-widest uppercase">
+            <span>Documentation</span>
+            <span>08</span>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 9: CERTIFICATES GRID 1 (4 Items) ================= -->
+    <div class="page bg-slate-50">
+        <div class="content-wrapper">
+            <h2 class="text-2xl font-black text-slate-900 mb-6 uppercase text-center tracking-wide border-b-2 border-slate-300 pb-2">Official Certificates (Part 1)</h2>
+            
+            <div class="grid grid-cols-2 gap-6 flex-grow">
+                <!-- Certificate 1 -->
+                <div class="bg-white p-3 shadow-md border border-slate-200 rounded flex flex-col h-[380px]">
+                    <div class="bg-slate-900 text-white p-2 text-center mb-2 rounded">
+                        <h3 class="font-bold uppercase tracking-wider text-xs">Commercial Registration</h3>
+                    </div>
+                    <div class="flex-grow flex items-center justify-center overflow-hidden">
+                        <img src="1.JPG" alt="Commercial Registration" class="max-w-full max-h-full object-contain">
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="bg-white p-3 shadow-md border border-slate-200 rounded flex flex-col h-[380px]">
+                    <div class="bg-slate-900 text-white p-2 text-center mb-2 rounded">
+                        <h3 class="font-bold uppercase tracking-wider text-xs">Chamber of Commerce</h3>
+                    </div>
+                    <div class="flex-grow flex items-center justify-center overflow-hidden">
+                        <img src="2.JPG" alt="Chamber of Commerce" class="max-w-full max-h-full object-contain">
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="bg-white p-3 shadow-md border border-slate-200 rounded flex flex-col h-[380px]">
+                    <div class="bg-theme text-white p-2 text-center mb-2 rounded">
+                        <h3 class="font-bold uppercase tracking-wider text-xs">VAT Registration (ZATCA)</h3>
+                    </div>
+                    <div class="flex-grow flex items-center justify-center overflow-hidden">
+                        <img src="3.JPG" alt="VAT Certificate" class="max-w-full max-h-full object-contain">
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="bg-white p-3 shadow-md border border-slate-200 rounded flex flex-col h-[380px]">
+                    <div class="bg-theme text-white p-2 text-center mb-2 rounded">
+                        <h3 class="font-bold uppercase tracking-wider text-xs">Zakat Certificate (ZATCA)</h3>
+                    </div>
+                    <div class="flex-grow flex items-center justify-center overflow-hidden">
+                        <img src="4.JPG" alt="Zakat Certificate" class="max-w-full max-h-full object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer"><div class="theme-line"></div><span>CERTIFICATES GALLERY</span><span>09</span></div>
+    </div>
+
+    <!-- ================= PAGE 10: CERTIFICATES GRID 2 (5 Items) ================= -->
+    <div class="page bg-slate-50">
+        <div class="content-wrapper">
+            <h2 class="text-2xl font-black text-slate-900 mb-4 uppercase text-center tracking-wide border-b-2 border-slate-300 pb-2">Official Certificates (Part 2)</h2>
+            
+            <div class="grid grid-cols-2 gap-4 flex-grow">
+                <!-- Certificate 5 -->
+                <div class="bg-white p-2 shadow-md border border-slate-200 rounded flex flex-col h-[250px]">
+                    <div class="bg-emerald-700 text-white p-1.5 text-center mb-2 rounded">
+                        <h3 class="font-bold uppercase tracking-wider text-[10px]">Municipal License (Balady)</h3>
+                    </div>
+                    <div class="flex-grow flex items-center justify-center overflow-hidden">
+                        <img src="5.JPG" alt="Balady License" class="max-w-full max-h-[190px] object-contain">
+                    </div>
+                </div>
+
+                <!-- Certificate 6 -->
+                <div class="bg-white p-2 shadow-md border border-slate-200 rounded flex flex-col h-[250px]">
+                    <div class="bg-yellow-600 text-white p-1.5 text-center mb-2 rounded">
+                        <h3 class="font-bold uppercase tracking-wider text-[10px]">Civil Defense Safety License</h3>
+                    </div>
+                    <div class="flex-grow flex items-center justify-center overflow-hidden">
+                        <img src="6.JPG" alt="Civil Defense License" class="max-w-full max-h-[190px] object-contain">
+                    </div>
+                </div>
+
+                <!-- Certificate 7 -->
+                <div class="bg-white p-2 shadow-md border border-slate-200 rounded flex flex-col h-[250px]">
+                    <div class="bg-blue-800 text-white p-1.5 text-center mb-2 rounded">
+                        <h3 class="font-bold uppercase tracking-wider text-[10px]">SME Certificate (Monsha'at)</h3>
+                    </div>
+                    <div class="flex-grow flex items-center justify-center overflow-hidden">
+                        <img src="7.JPG" alt="Monshaat Certificate" class="max-w-full max-h-[190px] object-contain">
+                    </div>
+                </div>
+
+                <!-- Certificate 8 -->
+                <div class="bg-white p-2 shadow-md border border-slate-200 rounded flex flex-col h-[250px]">
+                    <div class="bg-blue-600 text-white p-1.5 text-center mb-2 rounded">
+                        <h3 class="font-bold uppercase tracking-wider text-[10px]">Nationalization (Qiwa)</h3>
+                    </div>
+                    <div class="flex-grow flex items-center justify-center overflow-hidden">
+                        <img src="8.JPG" alt="Qiwa Certificate" class="max-w-full max-h-[190px] object-contain">
+                    </div>
+                </div>
+
+                <!-- Certificate 9 (Spans 2 columns) -->
+                <div class="col-span-2 bg-white p-2 shadow-md border border-slate-200 rounded flex flex-col h-[250px]">
+                    <div class="bg-slate-900 text-white p-1.5 text-center mb-2 rounded">
+                        <h3 class="font-bold uppercase tracking-wider text-[10px]">Saudi Business Center (QR)</h3>
+                    </div>
+                    <div class="flex-grow flex items-center justify-center overflow-hidden">
+                        <img src="vision.JPG" alt="Saudi Business Center" class="max-w-full max-h-[190px] object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer"><div class="theme-line"></div><span>CERTIFICATES GALLERY</span><span>10</span></div>
+    </div>
+
+</body>
+</html>
